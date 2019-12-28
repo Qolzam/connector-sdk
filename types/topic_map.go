@@ -27,7 +27,7 @@ func (t *TopicMap) Match(topicName string) []string {
 	var values []string
 
 	for key, val := range *t.lookup {
-		if key == topicName {
+		if checkTopicMatch(key, topicName) {
 			values = val
 			break
 		}
